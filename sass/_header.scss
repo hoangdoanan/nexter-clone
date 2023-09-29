@@ -1,0 +1,76 @@
+.header {
+	grid-column: full-start / col-end 6;
+
+	background-color: $color-grey-dark-1;
+	background-image: linear-gradient(rgba($color-secondary, 0.93), rgba($color-secondary, 0.93)), url(../img/hero.jpeg);
+	background-size: cover;
+	background-position: center;
+
+	padding: 4rem 8rem;
+
+	display: grid;
+	grid-template-rows: 1fr auto 1fr repeat(3, auto) 1fr repeat(2, auto) 0.5fr;
+	row-gap: 1.5rem;
+
+	&__logo {
+		grid-row: 2;
+		height: 4rem;
+		object-fit: cover;
+		justify-self: center;
+	}
+
+	&__sub-heading {
+		grid-row: 4;
+	}
+
+	&__main-heading {
+		grid-row: 5;
+		margin-bottom: 2rem;
+	}
+
+	&__btn {
+		grid-row: 6;
+		justify-self: flex-start;
+	}
+
+	&__seenon-text {
+		grid-row: 8;
+
+		font-size: 1.6rem;
+		color: $color-grey-light-2;
+
+		display: grid;
+		grid-template-columns: 1fr auto 1fr;
+		column-gap: 1.5rem;
+		align-items: center;
+
+		&::before,
+		&::after {
+			content: '';
+			height: 1px;
+			background-color: currentColor;
+		}
+	}
+
+	&__seenon-logos {
+		grid-row: 9;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+
+		img {
+			max-height: 2.5rem;
+			max-width: 20%;
+			object-fit: cover;
+			filter: brightness(70%);
+		}
+	}
+
+	@media only screen and (max-width: 50em) {
+		grid-column: full;
+	}
+
+	@media only screen and (max-width: 31.25em) {
+		padding: 4rem;
+	}
+}
